@@ -70,7 +70,21 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
         }
         static void Main(string[] args)
         {
-            
+            CircularList obj = new CircularList();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\nMenu");
+                    Console.WriteLine("1. View all the records in the list");
+                    Console.WriteLine("2. Search for a records in the list");
+                    Console.WriteLine("3. Display the first records in the list");
+                    Console.WriteLine("4. Exit");
+                    Console.Write("\nEnter your choice (1-4): ");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                    switch (ch)
+                }
+            }
         }
     }
 }
