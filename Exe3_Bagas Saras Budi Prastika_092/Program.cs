@@ -61,5 +61,9 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
                 Console.Write(LAST.rollNumber + "    " + LAST.name + "\n");
             }
         }
+        public void firstNode()
+        {
+
+        }
     }
 }
