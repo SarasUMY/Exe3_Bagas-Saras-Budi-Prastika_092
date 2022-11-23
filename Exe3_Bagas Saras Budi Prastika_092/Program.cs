@@ -35,5 +35,12 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
             else
                 return (false); /*returns false if the node is not found*/
         }
+        public bool listEmpty()
+        {
+            if (LAST == null)
+                return true;
+            else
+                return false;
+        }
     }
 }
