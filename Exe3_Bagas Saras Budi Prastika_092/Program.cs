@@ -68,6 +68,61 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
             else
                 Console.WriteLine("\nThe first record in the list is:\n\n " + LAST.next.rollNumber + "    " + LAST.next.name);
         }
+
+        public void addNode()
+        {
+            int nim;
+            string nama;
+            Console.Write("\nInput Student Number: ");
+            nim = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nInput Student Name: ");
+            nama = Console.ReadLine();
+            Node nodeBaru = new Node();
+            nodeBaru.rollNumber = nim;
+            nodeBaru.name = nama;
+
+            if (LAST == null || nim == LAST.rollNumber)
+            {
+                if ((LAST != null) && (nim == LAST.rollNumber))
+                {
+                    Console.WriteLine("\nSame student number is not allowed\n");
+                    return;
+                }
+                nodeBaru.next = LAST;
+                LAST = nodeBaru;
+                return;
+            }
+            Node previous, current;
+            previous = LAST;
+            current = LAST;
+
+            while ((current != null) && (nim >= current.rollNumber))
+            {
+                if (nim == current.rollNumber)
+                {
+                    Console.WriteLine("\nSame student number is not allowed\n");
+                    return;
+                }
+                previous = current;
+                current = current.next;
+            }
+            //mode baru akan ditempatkan diantara previous dan current
+            nodeBaru.next = current;
+            previous.next = nodeBaru;
+        }
+
+        public bool delNode(int rollNumber)
+        {
+            Node previous, current;
+            previous = current = null;
+
+            if (Search(rollNumber, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == LAST)
+                LAST = LAST.next;
+            return true;
+        }
         static void Main(string[] args)
         {
             CircularList obj = new CircularList();
@@ -76,20 +131,44 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
                 try
                 {
                     Console.WriteLine("\nMenu");
-                    Console.WriteLine("1. View all the records in the list");
-                    Console.WriteLine("2. Search for a records in the list");
-                    Console.WriteLine("3. Display the first records in the list");
-                    Console.WriteLine("4. Exit");
+                    Console.WriteLine("1. Add an records in the list");
+                    Console.WriteLine("2. Delete a records in the list");
+                    Console.WriteLine("3. View all the records in the list");
+                    Console.WriteLine("4. Search for a records in the list");
+                    Console.WriteLine("5. Display the first records in the list");
+                    Console.WriteLine("6. Exit");
                     Console.Write("\nEnter your choice (1-4): ");
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
                     {
                         case '1':
                             {
-                                obj.traverse();
+                                obj.addNode();
                             }
                             break;
                         case '2':
+                            {
+                                if (obj.listEmpty())
+                                {
+                                    Console.WriteLine("\nList Kosong");
+                                    break;
+                                }
+                                Console.Write("\nEnter an student number who will be delete: ");
+                                int nim = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.delNode(nim) == false)
+                                    Console.WriteLine("\nData can't found.");
+                                else
+                                    Console.WriteLine("Data with student number " + " deleted ");
+                            }
+                            break;
+
+                        case '3':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '4':
                             {
                                 if (obj.listEmpty() == true)
                                 {
@@ -110,12 +189,12 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
                                 }
                             }
                             break;
-                        case '3':
+                        case '5':
                             {
                                 obj.firstNode();
                             }
                             break;
-                        case '4':
+                        case '6':
                             return;
                         default:
                             {
