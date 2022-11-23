@@ -42,5 +42,11 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
             else
                 return false;
         }
+
+        /*traverses all the node of the list*/
+        public void traverse()
+        {
+            
+        }
     }
 }
