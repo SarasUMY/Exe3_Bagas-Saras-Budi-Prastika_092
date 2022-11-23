@@ -68,5 +68,9 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
             else
                 Console.WriteLine("\nThe first record in the list is:\n\n " + LAST.next.rollNumber + "    " + LAST.next.name);
         }
+        static void Main(string[] args)
+        {
+            
+        }
     }
 }
