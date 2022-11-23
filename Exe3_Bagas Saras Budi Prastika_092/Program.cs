@@ -46,7 +46,20 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
         /*traverses all the node of the list*/
         public void traverse()
         {
-            
+            if (listEmpty())
+                Console.WriteLine("\nList is empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are:\n");
+                Node currentNode;
+                currentNode = LAST.next;
+                while (currentNode != LAST)
+                {
+                    Console.Write(currentNode.rollNumber + "    " + currentNode.name + "\n");
+                    currentNode = currentNode.next;
+                }
+                Console.Write(LAST.rollNumber + "    " + LAST.name + "\n");
+            }
         }
     }
 }
