@@ -69,6 +69,7 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
                 Console.WriteLine("\nThe first record in the list is:\n\n " + LAST.next.rollNumber + "    " + LAST.next.name);
         }
 
+        /*membuat class untuk insert node*/
         public void addNode()
         {
             int nim;
@@ -111,6 +112,7 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
             previous.next = nodeBaru;
         }
 
+        /*membuat class untuk delete node*/
         public bool delNode(int rollNumber)
         {
             Node previous, current;
