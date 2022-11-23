@@ -150,7 +150,7 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
                             {
                                 if (obj.listEmpty())
                                 {
-                                    Console.WriteLine("\nList Kosong");
+                                    Console.WriteLine("\nList Empty");
                                     break;
                                 }
                                 Console.Write("\nEnter an student number who will be delete: ");
