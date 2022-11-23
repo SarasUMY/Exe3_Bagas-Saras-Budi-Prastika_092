@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Exe3_Bagas_Saras_Budi_Prastika_092
 {
-    class Program
+    class Node
     {
-        static void Main(string[] args)
-        {
-        }
+        /*creates Nodes for the circular nexted list*/
+        public int rollNumber;
+        public string name;
+        public Node next;
     }
 }
