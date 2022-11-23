@@ -21,5 +21,19 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
         {
             LAST = null;
         }
+
+        /*searches for the specified node*/
+        public bool Search(int rollNo, ref Node previous, ref Node current)
+        {
+            for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
+            {
+                if (rollNo == current.rollNumber)
+                    return (true); /*return true if the node is found*/
+            }
+            if (rollNo == LAST.rollNumber) /*if the node is present at the end*/
+                return true;
+            else
+                return (false); /*returns false if the node is not found*/
+        }
     }
 }
