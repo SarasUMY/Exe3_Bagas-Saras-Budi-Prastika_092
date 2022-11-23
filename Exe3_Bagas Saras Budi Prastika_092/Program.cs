@@ -13,4 +13,13 @@ namespace Exe3_Bagas_Saras_Budi_Prastika_092
         public string name;
         public Node next;
     }
+    class CircularList
+    {
+        Node LAST;
+
+        public CircularList()
+        {
+            LAST = null;
+        }
+    }
 }
